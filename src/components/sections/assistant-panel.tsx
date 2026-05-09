@@ -45,9 +45,9 @@ export function AssistantPanel() {
 
         <div className="space-y-4">
           {[
-            { icon: Bot, label: "Model", value: "Wayne-LLM v3" },
-            { icon: Activity, label: "Latency", value: "84ms" },
-            { icon: Sparkles, label: "Tokens / s", value: "248" },
+            { icon: Bot, label: "AI Model", value: "Gemini Pro" },
+            { icon: Activity, label: "Projects", value: "5" },
+            { icon: Sparkles, label: "LeetCode", value: "250+" },
           ].map((s) => (
             <div key={s.label} className="glass rounded-md p-4 flex items-center gap-3">
               <div className="grid h-10 w-10 place-items-center rounded bg-bat/10 text-bat">

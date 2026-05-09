@@ -3,10 +3,10 @@ import { Trophy, Award, Star, Rocket } from "lucide-react";
 import { SectionTitle } from "./experience";
 
 const items = [
-  { icon: Trophy, label: "Hackathon Winner", value: "5x" },
-  { icon: Award, label: "National Level Paper Presentation", value: "2nd" },
-  { icon: Star, label: "GitHub Stars", value: "1.2K+" },
-  { icon: Rocket, label: "Production Systems", value: "12" },
+  { icon: Trophy, label: "Intra-College Hackathon", value: "1st Prize" },
+  { icon: Award, label: "MGR University Hackathon", value: "2nd Prize" },
+  { icon: Star, label: "LeetCode Problems Solved", value: "250+" },
+  { icon: Rocket, label: "Projects Completed", value: "5" },
 ];
 
 export function Achievements() {

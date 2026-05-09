@@ -5,21 +5,31 @@ const items = [
   {
     role: "Software And Data Intern",
     org: "Smaart Healthcare",
-    period: "Aug 2025— Nov 2025",
-    desc: "Designing voice-first AI triage systems and multi-agent pipelines for clinical workflows.",
+    period: "Aug 2025 — Nov2025",
+    desc: "Developed AI Appointment Booking System and AI Nurse Triage Assistant. Gained hands-on experience with REST APIs, database design, and AI/NLP integration.",
   },
   {
-    role: "Full Stack Developer",
-    org: "VConnect",
-    period: "2024 — 2026",
-    desc: "Built a real-time collaboration platform serving thousands of users with sub-100ms latency.",
+    role: "MCA Student",
+    org: "University",
+    period: "2024 — Present",
+    desc: "Pursuing Master of Computer Applications with focus on full-stack development and AI integration. Building practical projects with Python, Flask, and modern web technologies.",
   },
+  
+   {
+  role: "Software Development Intern",
+  org: "AL-HASEENA EXPORTS",
+  period: "Jan 2026 — Apr 2026",
+  desc: "Developed LOGISENSE 360, a real-time shipment tracking and fleet management platform with live GPS tracking, analytics dashboards, operational alerts, warehouse management, and role-based logistics modules using Flask, JavaScript, SQLite, SSE, and Mappls API.",
+}, 
   {
-    role: "ML Research Intern",
-    org: "Independent",
-    period: "2022 — 2023",
-    desc: "NLP, retrieval augmentation, and applied transformer architectures.",
+    role: "Hackathon Participant",
+    org: "College Events",
+    period: "2024 — 2025",
+    desc: "Competed in multiple hackathons, winning 1st Prize Intra-College and 2nd Prize at MGR University. Solved 250+ LeetCode problems to strengthen problem-solving skills.",
   },
+
+
+
 ];
 
 export function Experience() {

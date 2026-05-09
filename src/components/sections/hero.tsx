@@ -46,7 +46,7 @@ export function Hero() {
       >
         <span className="text-muted-foreground">{">"} </span>
         <Typewriter
-          words={["AI Engineer", "Full Stack Developer", "Building Intelligent Systems"]}
+          words={["MCA Student", "Python Full-Stack Developer", "Building Web Solutions"]}
         />
       </motion.div>
 
@@ -56,8 +56,8 @@ export function Hero() {
         transition={{ delay: 0.7 }}
         className="mt-6 max-w-xl text-sm text-foreground/70 sm:text-base"
       >
-        Engineering autonomous AI systems and battle-tested full-stack platforms from the
-        shadows of Gotham — Chennai edition.
+Developing full-stack web applications with Python and modern JavaScript frameworks.
+        Passionate about building scalable backend systems and intuitive user interfaces.
       </motion.p>
 
       <motion.div

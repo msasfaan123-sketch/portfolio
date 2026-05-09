@@ -5,20 +5,36 @@ import { SectionTitle } from "./experience";
 const projects = [
   {
     name: "VConnect",
-    tag: "REAL-TIME / SAAS",
-    desc: "A modern, real-time collaboration platform built with WebSockets, edge functions, and a custom presence engine.",
-    stack: ["Next.js", "WebRTC", "Postgres", "Redis", "TypeScript"],
+    tag: "FULL-STACK / WEB",
+    desc: "A collaborative web platform for real-time communication and resource sharing. Built with Python Flask backend, MongoDB for data persistence, and JavaScript frontend with REST API architecture.",
+    stack: ["Python", "Flask", "MongoDB", "JavaScript", "REST APIs","SpringBoot"],
     github: "https://github.com/msasfaan123-sketch",
     live: "https://msa-bruce.vercel.app/",
   },
   {
-    name: "AI Nurse Triage",
-    tag: "AI VOICE / HEALTH",
-    desc: "Voice-first AI assistant that performs symptom triage and routes patients with clinical-grade safety guards.",
-    stack: ["Python", "LangGraph", "OpenAI", "Whisper", "FastAPI"],
+    name: "AI Nurse Triage Assistant",
+    tag: "AI / NLP",
+    desc: "An AI-powered healthcare assistant that helps users assess symptoms and provides preliminary guidance. Built with Python, NLP techniques, and integrates with backend APIs for intelligent responses.",
+    stack: ["Python", "AI/NLP", "Flask", "JavaScript", "REST APIs"],
     github: "https://github.com/msasfaan123-sketch",
     live: "https://ainurse.netlify.app/",
   },
+  {
+  name: "LOGISENSE 360",
+  tag: "Logistics / Real-Time Tracking",
+  desc: "A full-stack logistics and shipment tracking platform developed during internship at AL-HASEENA EXPORTS. Features real-time GPS vehicle tracking, fleet management, warehouse operations, customer tracking portals, analytics dashboards, operational alerts, and role-based logistics modules with a futuristic command-center interface.",
+  stack: ["Python", "Flask", "JavaScript", "SQLite", "REST APIs", "SSE", "Mappls API", "Chart.js"],
+  github: "https://github.com/msasfaan123-sketch",
+  live: "hhttps://logisense-rc4l.onrender.com/",
+},
+{
+  name: "AI Medical Appointment Booking Assistant",
+  tag: "AI / Healthcare",
+  desc: "An AI-powered medical appointment booking assistant developed during internship at Smaart Healthcare. Built using Ollama and Flask to handle intelligent patient interactions, appointment scheduling, symptom-based query handling, and real-time conversational workflows for healthcare support systems.",
+  stack: ["Python", "Flask", "Ollama", "AI/NLP", "JavaScript", "REST APIs"],
+  github: "https://github.com/msasfaan123-sketch",
+  live: "https://medicalbot.netlify.app/",
+},
 ];
 
 export function Projects() {

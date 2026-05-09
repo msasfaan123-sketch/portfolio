@@ -4,7 +4,7 @@ import { SectionTitle } from "./experience";
 import resumePdf from "@/MS.ASFAAN_RESUME.pdf?url";
 
 const contacts = [
-  { icon: Mail, label: "EMAIL", value: "mohamed.asfaan@example.com", href: "mailto:mohamed.asfaan@example.com" },
+  { icon: Mail, label: "EMAIL", value: "ms.asfaan123@gmail.com", href: "mailto:ms.asfaan123@gmail.com" },
   {
     icon: Linkedin,
     label: "LINKEDIN",

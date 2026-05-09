@@ -3,30 +3,30 @@ import { SectionTitle } from "./experience";
 
 const groups = [
   {
-    title: "AI / ML",
+    title: "Backend",
     skills: [
-      { n: "PyTorch", v: 90 },
-      { n: "LangGraph / LangChain", v: 88 },
-      { n: "RAG & Vector DBs", v: 92 },
-      { n: "LLM Fine-tuning", v: 80 },
+      { n: "Python", v: 85 },
+      { n: "Flask", v: 80 },
+      { n: "REST APIs", v: 82 },
+      { n: "SQL", v: 78 },
     ],
   },
   {
-    title: "Full Stack",
+    title: "Frontend & Data",
     skills: [
-      { n: "TypeScript / React", v: 95 },
-      { n: "Next.js / TanStack", v: 90 },
-      { n: "Node.js / FastAPI", v: 88 },
-      { n: "Postgres / Redis", v: 85 },
+      { n: "JavaScript", v: 80 },
+      { n: "MongoDB", v: 75 },
+      { n: "Git / GitHub", v: 82 },
+      { n: "Problem Solving", v: 85 },
     ],
   },
   {
-    title: "Infra & Tools",
+    title: "AI & Tools",
     skills: [
-      { n: "Docker / K8s", v: 78 },
-      { n: "AWS / GCP", v: 82 },
-      { n: "CI/CD", v: 84 },
-      { n: "Observability", v: 76 },
+      { n: "AI / NLP", v: 75 },
+      { n: "API Integration", v: 80 },
+      { n: "Debugging", v: 78 },
+      { n: "Documentation", v: 75 },
     ],
   },
 ];
