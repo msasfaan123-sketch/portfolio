@@ -6,8 +6,9 @@ const groups = [
     title: "Backend",
     skills: [
       { n: "Python", v: 85 },
-      { n: "Flask", v: 80 },
-      { n: "REST APIs", v: 82 },
+      { n: "Java", v: 80 },
+      { n: "Flask", v: 82 },
+      { n: "Spring Boot", v: 78 },
       { n: "SQL", v: 78 },
     ],
   },
@@ -16,7 +17,7 @@ const groups = [
     skills: [
       { n: "JavaScript", v: 80 },
       { n: "MongoDB", v: 75 },
-      { n: "Git / GitHub", v: 82 },
+      { n: "Git / GitHub", v: 52 },
       { n: "Problem Solving", v: 85 },
     ],
   },

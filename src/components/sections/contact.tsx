@@ -8,7 +8,7 @@ const contacts = [
   {
     icon: Linkedin,
     label: "LINKEDIN",
-    value: "mohamed-asfaan-5a3340284",
+    value: "M.S.Asfaan",
     href: "https://www.linkedin.com/in/mohamed-asfaan-5a3340284",
   },
   { icon: Github, label: "GITHUB", value: "msasfaan123-sketch", href: "https://github.com/msasfaan123-sketch" },

@@ -25,7 +25,7 @@ const projects = [
   desc: "A full-stack logistics and shipment tracking platform developed during internship at AL-HASEENA EXPORTS. Features real-time GPS vehicle tracking, fleet management, warehouse operations, customer tracking portals, analytics dashboards, operational alerts, and role-based logistics modules with a futuristic command-center interface.",
   stack: ["Python", "Flask", "JavaScript", "SQLite", "REST APIs", "SSE", "Mappls API", "Chart.js"],
   github: "https://github.com/msasfaan123-sketch",
-  live: "hhttps://logisense-rc4l.onrender.com/",
+  live: "https://logisense-rc4l.onrender.com/",
 },
 {
   name: "AI Medical Appointment Booking Assistant",

@@ -1,17 +1,51 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageSquare, X, Send, Zap, Loader2 } from "lucide-react";
 import { BatIcon } from "./bat-icon";
+import { getBotReply } from "../lib/knowledgeBase";
 
-type Msg = { from: "bot" | "user"; text: string };
+type Msg = { from: "bot" | "user"; text: string; typing?: boolean };
 
 export function Chatbot() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [typing, setTyping] = useState(false);
   const [msgs, setMsgs] = useState<Msg[]>([
     { from: "bot", text: "Batcomputer online. How may I assist you, Detective?" },
   ]);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [msgs, typing]);
+
+  const typeMessage = (text: string) => {
+    setTyping(true);
+    let index = 0;
+    const speed = 15; // typing speed in ms
+
+    const interval = setInterval(() => {
+      setMsgs((prev) => {
+        const newMsgs = [...prev];
+        const lastMsg = newMsgs[newMsgs.length - 1];
+        if (lastMsg.from === "bot") {
+          newMsgs[newMsgs.length - 1] = { ...lastMsg, text: text.slice(0, index + 1) };
+        }
+        return newMsgs;
+      });
+      index++;
+
+      if (index >= text.length) {
+        clearInterval(interval);
+        setTyping(false);
+      }
+    }, speed);
+  };
 
   const send = async (t?: string) => {
     const text = (t ?? input).trim();
@@ -20,45 +54,16 @@ export function Chatbot() {
     setInput("");
     setLoading(true);
 
-    try {
-      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-      console.log("API Key present:", !!apiKey);
+    // Simulate AI thinking delay
+    await new Promise((resolve) => setTimeout(resolve, 800));
 
-      const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            contents: [{ parts: [{ text }] }],
-          }),
-        }
-      );
-
-      console.log("Response status:", response.status);
-
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error("API error response:", errorText);
-        throw new Error(`API request failed: ${response.status}`);
-      }
-
-      const data = await response.json();
-      console.log("API response data:", data);
-      const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "No response received.";
-      setMsgs((m) => [...m, { from: "bot", text: reply }]);
-    } catch (error) {
-      console.error("Gemini API error:", error);
-      setMsgs((m) => [
-        ...m,
-        { from: "bot", text: `// Connection failed: ${error instanceof Error ? error.message : "Unknown error"}` },
-      ]);
-    } finally {
-      setLoading(false);
-    }
+    const reply = getBotReply(text);
+    setMsgs((m) => [...m, { from: "bot", text: "" }]);
+    setLoading(false);
+    typeMessage(reply);
   };
 
-  const quick = ["Show projects", "Skills overview", "Contact details"];
+  const quick = ["About you", "Your skills", "Your projects", "Contact info", "Education"];
 
   return (
     <>
@@ -124,9 +129,25 @@ export function Chatbot() {
                     >
                       {m.from === "bot" && <span className="mr-1 text-bat/60">[AI]</span>}
                       {m.text}
+                      {typing && i === msgs.length - 1 && m.from === "bot" && (
+                        <span className="inline-block w-2 h-4 ml-1 bg-bat animate-pulse" />
+                      )}
                     </div>
                   </motion.div>
                 ))}
+                {loading && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="flex justify-start"
+                  >
+                    <div className="border border-bat/30 bg-black/40 rounded px-3 py-2 text-bat/90">
+                      <span className="mr-1 text-bat/60">[AI]</span>
+                      <span className="animate-pulse">Analyzing query...</span>
+                    </div>
+                  </motion.div>
+                )}
+                <div ref={messagesEndRef} />
               </div>
 
               <div className="border-t border-bat/20 bg-black/40 p-3">

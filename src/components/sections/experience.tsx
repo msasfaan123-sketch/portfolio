@@ -10,7 +10,7 @@ const items = [
   },
   {
     role: "MCA Student",
-    org: "University",
+    org: "University Of Madras",
     period: "2024 — Present",
     desc: "Pursuing Master of Computer Applications with focus on full-stack development and AI integration. Building practical projects with Python, Flask, and modern web technologies.",
   },
