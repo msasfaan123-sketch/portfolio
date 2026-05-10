@@ -4,15 +4,16 @@ import { MessageSquare, X, Send, Zap, Loader2 } from "lucide-react";
 import { BatIcon } from "./bat-icon";
 import { getBotReply } from "../lib/knowledgeBase";
 
-type Msg = { from: "bot" | "user"; text: string; typing?: boolean };
+type Msg = { from: "bot" | "user"; text: string; timestamp?: string };
 
 export function Chatbot() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [typing, setTyping] = useState(false);
+  const [thinkingStage, setThinkingStage] = useState(0);
   const [msgs, setMsgs] = useState<Msg[]>([
-    { from: "bot", text: "Batcomputer online. How may I assist you, Detective?" },
+    { from: "bot", text: "Batcomputer online. How may I assist you, Detective?", timestamp: new Date().toLocaleTimeString() },
   ]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -27,43 +28,60 @@ export function Chatbot() {
   const typeMessage = (text: string) => {
     setTyping(true);
     let index = 0;
-    const speed = 15; // typing speed in ms
+    let charIndex = 0;
+    const textArray = text.split('');
 
-    const interval = setInterval(() => {
-      setMsgs((prev) => {
-        const newMsgs = [...prev];
-        const lastMsg = newMsgs[newMsgs.length - 1];
-        if (lastMsg.from === "bot") {
-          newMsgs[newMsgs.length - 1] = { ...lastMsg, text: text.slice(0, index + 1) };
-        }
-        return newMsgs;
-      });
-      index++;
-
-      if (index >= text.length) {
-        clearInterval(interval);
+    const typeChar = () => {
+      if (charIndex < textArray.length) {
+        setMsgs((prev) => {
+          const newMsgs = [...prev];
+          const lastMsg = newMsgs[newMsgs.length - 1];
+          if (lastMsg.from === "bot") {
+            newMsgs[newMsgs.length - 1] = { ...lastMsg, text: text.slice(0, charIndex + 1) };
+          }
+          return newMsgs;
+        });
+        charIndex++;
+        // Variable typing speed for more natural feel
+        const speed = Math.random() * 20 + 10;
+        setTimeout(typeChar, speed);
+      } else {
         setTyping(false);
       }
-    }, speed);
+    };
+
+    typeChar();
   };
 
   const send = async (t?: string) => {
     const text = (t ?? input).trim();
     if (!text) return;
-    setMsgs((m) => [...m, { from: "user", text }]);
+    setMsgs((m) => [...m, { from: "user", text, timestamp: new Date().toLocaleTimeString() }]);
     setInput("");
     setLoading(true);
+    setThinkingStage(0);
 
-    // Simulate AI thinking delay
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    // Simulate AI thinking with stages
+    const stages = ['Initializing neural core...', 'Accessing knowledge base...', 'Processing query...', 'Generating response...'];
+    for (let i = 0; i < stages.length; i++) {
+      setThinkingStage(i);
+      await new Promise((resolve) => setTimeout(resolve, 400));
+    }
 
     const reply = getBotReply(text);
-    setMsgs((m) => [...m, { from: "bot", text: "" }]);
+    setMsgs((m) => [...m, { from: "bot", text: "", timestamp: new Date().toLocaleTimeString() }]);
     setLoading(false);
+    setThinkingStage(0);
     typeMessage(reply);
   };
 
-  const quick = ["About you", "Your skills", "Your projects", "Contact info", "Education"];
+  const quick = [
+    { label: "Who are you?", icon: "👤" },
+    { label: "Your skills", icon: "⚡" },
+    { label: "Your projects", icon: "🚀" },
+    { label: "Contact info", icon: "📧" },
+    { label: "Education", icon: "🎓" },
+  ];
 
   return (
     <>
@@ -120,17 +138,24 @@ export function Chatbot() {
                     animate={{ opacity: 1, y: 0 }}
                     className={`flex ${m.from === "user" ? "justify-end" : "justify-start"}`}
                   >
-                    <div
-                      className={`max-w-[80%] rounded px-3 py-2 ${
-                        m.from === "user"
-                          ? "bg-bat text-black"
-                          : "border border-bat/30 bg-black/40 text-bat/90"
-                      }`}
-                    >
-                      {m.from === "bot" && <span className="mr-1 text-bat/60">[AI]</span>}
-                      {m.text}
-                      {typing && i === msgs.length - 1 && m.from === "bot" && (
-                        <span className="inline-block w-2 h-4 ml-1 bg-bat animate-pulse" />
+                    <div>
+                      <div
+                        className={`max-w-[80%] rounded px-3 py-2 ${
+                          m.from === "user"
+                            ? "bg-bat text-black"
+                            : "border border-bat/30 bg-black/40 text-bat/90"
+                        }`}
+                      >
+                        {m.from === "bot" && <span className="mr-1 text-bat/60">[AI]</span>}
+                        {m.text}
+                        {typing && i === msgs.length - 1 && m.from === "bot" && (
+                          <span className="inline-block w-2 h-4 ml-1 bg-bat animate-pulse" />
+                        )}
+                      </div>
+                      {m.timestamp && (
+                        <div className={`mt-1 text-[10px] text-muted-foreground ${m.from === "user" ? "text-right" : ""}`}>
+                          {m.timestamp}
+                        </div>
                       )}
                     </div>
                   </motion.div>
@@ -143,7 +168,12 @@ export function Chatbot() {
                   >
                     <div className="border border-bat/30 bg-black/40 rounded px-3 py-2 text-bat/90">
                       <span className="mr-1 text-bat/60">[AI]</span>
-                      <span className="animate-pulse">Analyzing query...</span>
+                      <span className="animate-pulse">
+                        {thinkingStage === 0 && "Initializing neural core..."}
+                        {thinkingStage === 1 && "Accessing knowledge base..."}
+                        {thinkingStage === 2 && "Processing query..."}
+                        {thinkingStage === 3 && "Generating response..."}
+                      </span>
                     </div>
                   </motion.div>
                 )}
@@ -154,11 +184,12 @@ export function Chatbot() {
                 <div className="mb-2 flex flex-wrap gap-1">
                   {quick.map((q) => (
                     <button
-                      key={q}
-                      onClick={() => send(q)}
-                      className="flex items-center gap-1 rounded border border-bat/30 px-2 py-1 text-[10px] uppercase tracking-wider text-bat/80 hover:bg-bat/10"
+                      key={q.label}
+                      onClick={() => send(q.label)}
+                      disabled={loading}
+                      className="flex items-center gap-1 rounded border border-bat/30 px-2 py-1 text-[10px] uppercase tracking-wider text-bat/80 hover:bg-bat/10 disabled:opacity-50 transition"
                     >
-                      <Zap className="h-3 w-3" /> {q}
+                      <span>{q.icon}</span> {q.label}
                     </button>
                   ))}
                 </div>

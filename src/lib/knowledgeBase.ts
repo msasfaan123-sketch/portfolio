@@ -66,13 +66,43 @@ export const qaPairs: QAPair[] = [
 },
 
 {
-  keywords: ["frontend skills"],
-  answer: "Frontend expertise includes JavaScript, responsive UI systems, dashboard architectures, futuristic interfaces, CSS animations, and interactive user experiences."
+  keywords: ["frontend skills", "your skills", "skills", "tech stack", "technologies", "what do you know"],
+  answer: "My core skills include Python (85%), Flask (82%), REST APIs (82%), SQL (78%), JavaScript (80%), MongoDB (75%), Git/GitHub (82%), AI/NLP (75%), and problem solving (85%)."
 },
 
 {
-  keywords: ["backend skills"],
+  keywords: ["backend skills", "your skills", "skills", "tech stack", "technologies"],
   answer: "Backend expertise includes Python, Flask, REST APIs, MongoDB, SQLite, authentication systems, AI workflows, and real-time event architectures."
+},
+
+{
+  keywords: ["education", "college", "mca", "university", "study", "degree"],
+  answer: "I am currently pursuing my Master of Computer Applications (MCA) at University of Madras, Chennai. My education focuses on full-stack development and AI integration."
+},
+
+{
+  keywords: ["projects", "your projects", "project", "work", "portfolio"],
+  answer: "My major projects include VConnect (AI-powered village analytics), LOGISENSE 360 (real-time logistics tracking), AI Nurse Triage Assistant (healthcare AI), and AI Medical Appointment Booking Assistant (Ollama-based)."
+},
+
+{
+  keywords: ["contact", "contact info", "email", "reach", "connect"],
+  answer: "You can contact me via email at ms.asfaan123@gmail.com. Connect with me on LinkedIn (linkedin.com/in/mohamed-asfaan-5a3340284) or GitHub (github.com/msasfaan123-sketch)."
+},
+
+{
+  keywords: ["experience", "internship", "work experience", "job"],
+  answer: "I worked as a Software and Data Intern at Smaart Healthcare (Aug-Nov 2025) developing AI healthcare systems. Currently interning at AL-HASEENA EXPORTS (Jan-Apr 2026) building LOGISENSE 360 logistics platform."
+},
+
+{
+  keywords: ["achievements", "hackathon", "awards", "prize", "recognition"],
+  answer: "I secured 1st Prize in an intra-college hackathon and 2nd Prize in the MGR University Hackathon. I've also solved 250+ LeetCode problems to strengthen problem-solving skills."
+},
+
+{
+  keywords: ["leetcode", "dsa", "algorithm", "data structure"],
+  answer: "I have solved over 250+ LeetCode problems covering algorithms, data structures, arrays, trees, graphs, dynamic programming, and optimization techniques."
 },
 
 {
@@ -81,23 +111,138 @@ export const qaPairs: QAPair[] = [
 },
 
 {
-  keywords: ["tell me about vconnect"],
+  keywords: ["tell me about vconnect", "vconnect", "v connect", "village analytics"],
   answer: "VConnect is an AI-powered village analytics and welfare platform that processes large-scale rural datasets and provides analytics-driven insights for village development workflows."
 },
 
 {
-  keywords: ["tell me about logisense"],
+  keywords: ["tell me about logisense", "logisense", "logisense 360", "shipment tracking", "logistics", "tracking"],
   answer: "LOGISENSE 360 is a futuristic shipment tracking and logistics platform with live GPS tracking, fleet monitoring, warehouse management, analytics dashboards, and operational alert systems."
 },
 
 {
-  keywords: ["healthcare project"],
+  keywords: ["healthcare project", "medical project", "ai nurse", "nurse triage", "healthcare", "medical"],
   answer: "Mohamed developed AI-powered healthcare systems including an AI Nurse Triage Assistant and an AI Medical Appointment Booking Assistant during his internship at Smaart Healthcare."
 },
 
 {
-  keywords: ["ollama"],
+  keywords: ["ollama", "ai model", "llm", "language model"],
   answer: "Ollama was used to build conversational AI workflows for healthcare automation and intelligent patient interaction systems."
+},
+
+{
+  keywords: ["smaart healthcare", "healthcare internship", "medical internship"],
+  answer: "At Smaart Healthcare, I worked on AI-driven healthcare systems involving appointment booking automation, NLP workflows, REST APIs, and intelligent patient interaction systems."
+},
+
+{
+  keywords: ["al haseena exports", "logistics internship", "exports"],
+  answer: "At AL-HASEENA EXPORTS, I developed LOGISENSE 360, a real-time shipment tracking platform with GPS tracking, fleet management, warehouse operations, and analytics dashboards using Python, Flask, JavaScript, and SSE."
+},
+
+{
+  keywords: ["java", "spring boot", "springboot"],
+  answer: "I also have experience with Java (80%) and Spring Boot (78%) for backend development, complementing my Python and Flask expertise."
+},
+
+{
+  keywords: ["github", "github profile", "repository", "code"],
+  answer: "GitHub repositories and technical projects are available at github.com/msasfaan123-sketch. You can explore all my projects and code there."
+},
+
+{
+  keywords: ["linkedin", "linkedin profile", "social", "network"],
+  answer: "You can connect with Mohamed Sathak Asfaan through LinkedIn (linkedin.com/in/mohamed-asfaan-5a3340284) for networking, collaboration, and professional opportunities."
+},
+
+{
+  keywords: ["location", "where are you from", "where do you live", "city", "place"],
+  answer: "I am based in Chennai, India."
+},
+
+{
+  keywords: ["resume", "cv", "download resume", "resume download"],
+  answer: "Resume access available in the portfolio command center. Download the latest professional resume directly from the resume section."
+},
+
+{
+  keywords: ["portfolio", "website", "this site", "this portfolio"],
+  answer: "This portfolio is designed as a futuristic Batman-inspired AI operating system showcasing Mohamed's projects, skills, internships, and technical journey."
+},
+
+{
+  keywords: ["batcomputer", "theme", "design", "ui", "interface"],
+  answer: "The portfolio UI is inspired by cinematic Batcomputer and cyberpunk dashboard systems with futuristic animations and AI-style interactions."
+},
+
+{
+  keywords: ["why this portfolio theme", "batman", "why batman"],
+  answer: "The Batman-inspired operating system theme reflects Mohamed's interest in futuristic AI systems, immersive interfaces, and cinematic user experiences."
+},
+
+{
+  keywords: ["career goal", "future", "goals", "aspirations"],
+  answer: "My goal is to build impactful AI-powered systems and scalable full-stack applications focused on analytics, automation, and intelligent user experiences."
+},
+
+{
+  keywords: ["availability", "job", "hiring", "opportunity"],
+  answer: "Mohamed is actively exploring internship opportunities, AI-focused roles, and full-stack development positions."
+},
+
+{
+  keywords: ["what makes you different", "unique", "stand out", "difference"],
+  answer: "A combination of AI integration skills, futuristic UI thinking, analytics engineering, and real-world project development makes Mohamed stand out as a developer."
+},
+
+{
+  keywords: ["passion", "interests", "what do you like"],
+  answer: "Passionate about AI systems, futuristic interfaces, analytics engineering, automation, and intelligent full-stack applications."
+},
+
+{
+  keywords: ["motivation", "why", "purpose"],
+  answer: "The motivation comes from building impactful systems that combine intelligence, automation, analytics, and user-centric experiences."
+},
+
+{
+  keywords: ["can you code", "programming", "developer"],
+  answer: "Absolutely. Mohamed specializes in Python, Flask, JavaScript, AI workflows, APIs, and scalable full-stack development."
+},
+
+{
+  keywords: ["what are you building now", "current work", "working on"],
+  answer: "Currently focused on improving AI-powered portfolio systems, analytics platforms, healthcare automation workflows, and intelligent chatbot experiences."
+},
+
+{
+  keywords: ["ai assistant", "chatbot", "this chatbot"],
+  answer: "This chatbot itself is a locally powered intelligent portfolio assistant designed to simulate a futuristic Batcomputer-style AI experience."
+},
+
+{
+  keywords: ["thank you", "thanks", "appreciate"],
+  answer: "You're welcome. Batcomputer assistant standing by for further queries."
+},
+
+{
+  keywords: ["bye", "goodbye", "exit", "quit"],
+  answer: "Session terminated. Thank you for exploring Mohamed Sathak Asfaan's portfolio systems."
+},
+
+{
+  keywords: ["hello", "hi", "hey", "good morning", "good evening", "greetings"],
+  answer: "Initializing Batcomputer interface... Welcome back. I am Asfaan's AI portfolio assistant. How may I assist you today?"
+},
+
+{
+  keywords: ["how are you", "status", "system status"],
+  answer: "All systems operational. Portfolio intelligence core running smoothly. Ready to assist you."
+},
+
+{
+  keywords: ["what can you do", "help", "capabilities"],
+  answer: "I can provide information about Mohamed Sathak Asfaan's projects, skills, internships, achievements, tech stack, education, and AI systems."
 },
 
 {
@@ -249,11 +394,11 @@ export const qaPairs: QAPair[] = [
 ];
 
 const fallbackResponses = [
-  "Accessing Batcomputer archives... No direct match found. Try asking about my skills, projects, or experience.",
-  "The requested information is not available in the current database. Would you like me to show my projects instead?",
-  "Scanning portfolio intelligence system... Query not recognized. Please rephrase your question.",
-  "Database search complete. No relevant information found. Try asking about my background or tech stack.",
-  "Batcomputer neural core processing... Unable to locate data. Please ask a specific question about my work."
+  "I can only answer questions about Mohamed Sathak Asfaan's portfolio. Please ask about his skills, projects, experience, education, or contact information.",
+  "This is a portfolio assistant. I can provide information about Mohamed's work, skills, projects, internships, and achievements only.",
+  "I'm designed to answer portfolio-related questions. Try asking about Mohamed's technical skills, projects like VConnect or LOGISENSE 360, or his experience.",
+  "I can only help with portfolio information. Please ask about Mohamed's background, education (MCA), internships, or technical projects.",
+  "Batcomputer portfolio database: Please ask questions related to Mohamed Sathak Asfaan's professional profile, skills, or projects."
 ];
 
 export function getBotReply(message: string): string {
